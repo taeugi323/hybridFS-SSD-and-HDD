@@ -1,0 +1,2335 @@
+
+bb_init()
+    conn:
+    proto_major = 7
+    proto_minor = 23
+    async_read = 1
+    max_write = 131072
+    max_readahead = 131072
+    capable = 00000ffb
+    want = 00000010
+    max_background = 0
+    congestion_threshold = 0
+    context:
+    fuse = 013ce530
+    uid = 0
+    gid = 0
+    pid = 0
+    private_data = 013cb010
+    logfile = 013ce070
+    dir_ssd = /home/taeugi323/Desktop/hybridFS/ssd
+    dir_hdd = /home/taeugi323/Desktop/hybridFS/hdd
+    umask = 00000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efd30
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efd30
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=04)
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned 0
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efd60
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efd30
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efd30
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+    lstat returned 0
+    lstat returned 0
+    lstat returned 0
+    lstat returned 0
+    lstat returned 0
+    lstat returned 0
+    lstat returned 0
+    lstat returned 0
+    lstat returned 0
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned 0
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned 0
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned 0
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned 0
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned 0
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efd30
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efd30
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x13efc20
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned 0
+
+bb_readdir(path="/", buf=0x013ce3d0, filler=0x61785ce0, offset=0, fi=0xacb19610)
+    readdir returned 0x0x13efc50
+calling filler with name a.out
+calling filler with name b.c
+calling filler with name ..
+calling filler with name aaa
+calling filler with name ccc
+calling filler with name change2.sh
+calling filler with name change3.sh
+calling filler with name test.c
+calling filler with name a.c
+calling filler with name make_large_text.py
+calling filler with name change1.sh
+calling filler with name .
+calling filler with name large_file.txt
+calling filler with name large_file2.txt
+calling filler with name test.txt
+calling filler with name largest_file5.txt
+calling filler with name large_file3.txt
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x013efc20
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000013efc20
+    lock_owner = 0x0000000000000000
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned 0
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+
+bb_mknod(path="/.aa.c.swp", mode=0100600, dev=0)
+    open returned 5
+    close returned 0
+    lstat returned 0
+
+bb_open(path"/.aa.c.swp", fi=0xacb196d0)
+    open returned 5
+    fi:
+    flags = 0x00008002
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000005
+    lock_owner = 0x0000000000000000
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+
+bb_mknod(path="/.aa.c.swx", mode=0100600, dev=0)
+    open returned 33
+    close returned 0
+    lstat returned 0
+
+bb_open(path"/.aa.c.swx", fi=0xacb196d0)
+    open returned 33
+    fi:
+    flags = 0x00008002
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000021
+    lock_owner = 0x0000000000000000
+
+bb_release(path="/.aa.c.swx", fi=0xacb196d0)
+    fi:
+    flags = 0x00008002
+    fh_old = 0x00000021
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000021
+    lock_owner = 0x0000000000000000
+    close returned 0
+bb_unlink(path="/.aa.c.swx")
+    unlink returned 0
+
+bb_release(path="/.aa.c.swp", fi=0xacb196d0)
+    fi:
+    flags = 0x00008002
+    fh_old = 0x00000005
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000005
+    lock_owner = 0x0000000000000000
+    close returned 0
+bb_unlink(path="/.aa.c.swp")
+    unlink returned 0
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+
+bb_mknod(path="/.aa.c.swp", mode=0100600, dev=0)
+    open returned 5
+    close returned 0
+    lstat returned 0
+
+bb_open(path"/.aa.c.swp", fi=0xacb196d0)
+    open returned 5
+    fi:
+    flags = 0x00028002
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000005
+    lock_owner = 0x0000000000000000
+
+bb_write(path="/.aa.c.swp", buf=0x61b9d060, size=4096, offset=0, fi=0xacb19740)
+    fi:
+    flags = 0x00028002
+    fh_old = 0x00000005
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000005
+    lock_owner = 0x0000000000000000
+    pwrite returned 4096
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_opendir(path="/", fi=0xacb19610)
+    opendir returned 0x0x14e2fc0
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+
+bb_access(path="/", mask=01)
+
+bb_access(path="/", mask=01)
+
+bb_releasedir(path="/", fi=0xacb19620)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x014e2fc0
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x00000000014e2fc0
+    lock_owner = 0x0000000000000000
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+
+bb_write(path="/.aa.c.swp", buf=0x61b9d060, size=4096, offset=0, fi=0xacb19740)
+    fi:
+    flags = 0x00028002
+    fh_old = 0x00000005
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000005
+    lock_owner = 0x0000000000000000
+    pwrite returned 4096
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    lstat returned -1
+    ERROR lstat: No such file or directory
+
+bb_mknod(path="/aa.c", mode=0100664, dev=0)
+    open returned 33
+    close returned 0
+    lstat returned 0
+
+bb_open(path"/aa.c", fi=0xacb196d0)
+    open returned 33
+    fi:
+    flags = 0x00008001
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000021
+    lock_owner = 0x0000000000000000
+
+bb_write(path="/aa.c", buf=0x61b9d060, size=73, offset=0, fi=0xacb19740)
+    fi:
+    flags = 0x00008001
+    fh_old = 0x00000021
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000021
+    lock_owner = 0x0000000000000000
+    pwrite returned 73
+
+bb_fsync(path="/aa.c", datasync=0, fi=0xacb196d0)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000021
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000021
+    lock_owner = 0x0000000000000000
+    fsync returned 0
+    lstat returned 0
+
+bb_release(path="/aa.c", fi=0xacb196d0)
+    fi:
+    flags = 0x00008001
+    fh_old = 0x00000021
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000021
+    lock_owner = 0x0000000000000000
+    close returned 0
+
+bb_write(path="/.aa.c.swp", buf=0x61b9d060, size=4096, offset=0, fi=0xacb19740)
+    fi:
+    flags = 0x00028002
+    fh_old = 0x00000005
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000005
+    lock_owner = 0x0000000000000000
+    pwrite returned 4096
+
+bb_release(path="/.aa.c.swp", fi=0xacb196d0)
+    fi:
+    flags = 0x00028002
+    fh_old = 0x00000005
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000005
+    lock_owner = 0x0000000000000000
+    close returned 0
+    lstat returned 0
+bb_unlink(path="/.aa.c.swp")
+    unlink returned 0
+    lstat returned 0
+    lstat returned 0
+
+bb_destroy(userdata=0x013cb010)
