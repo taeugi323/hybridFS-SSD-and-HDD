@@ -60,7 +60,7 @@ struct ulog_file_node
 struct ulog_node
 {
     int size;
-    int offset;
+    long long offset;
     struct ulog_node *link;
 };
 

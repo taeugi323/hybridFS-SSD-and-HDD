@@ -6,5 +6,5 @@
 int main()
 {
     int a = O_APPEND;
-    printf("%x\n",a);
+    printf("%d\n",a);
 }

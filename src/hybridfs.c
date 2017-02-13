@@ -21,6 +21,8 @@
 
 #include "log.h"
 
+#define off64_t int64_t
+
 //  All the paths I see are relative to the root of the mounted
 //  filesystem.  In order to get to the underlying filesystem, I need to
 //  have the mountpoint.  I'll save it away early on in main(), and then
@@ -31,6 +33,8 @@ struct mutex_node* hb_retMutex(const char *path);
 
 struct mutex_node *mutex_head = NULL;
 struct ulog_file_node *ulog_file_head = NULL;
+//static int mig_end_flag;
+//int count1 = 0, count2 = 0, count3 = 0;
 
 static void hb_fullpath_ssd(char fpath[PATH_MAX], const char *path)
 {
@@ -205,10 +209,13 @@ int hb_createUfile(const char *path)
     strcpy(node->rel_path, path);
     node->link = NULL;
 
+    ///// This node is for the first node of ulog linked list.
+    ///// The first node's offset is always 0.
+    ///// The first node's size is linked list's size.
     head = (struct ulog_node*)malloc(sizeof(struct ulog_node));
     if (head == NULL)
         return 0;
-    head->size = -1;
+    head->size = 0;
     head->offset = 0;
     head->link = NULL;
     
@@ -272,15 +279,15 @@ int hb_deleteUfile(const char *path)
     return 0;
 }
 
-int hb_insertUlog(struct ulog_node *log_head, int size, int offset) 
+int hb_insertUlog(struct ulog_node *log_head, int size, long long offset) 
 {
     struct ulog_node *node, *ptr = log_head;
 
-    if (ptr->size == -1) {
+    /*if (ptr->size == -1) {
         ptr->size = size;
         ptr->offset = offset;
         return 1;
-    }
+    }*/
 
     node = (struct ulog_node*)malloc(sizeof(struct ulog_node));
     node->size = size;
@@ -337,7 +344,7 @@ void hb_printUlog(struct ulog_node *log_head)
     if (ptr == NULL)
         printf("  There's no log\n");
     while (ptr != NULL) {
-        printf("size : %d, offset : %d\n",ptr->size, ptr->offset);
+        printf("size : %d, offset : %lld\n",ptr->size, ptr->offset);
         ptr = ptr->link;
     }
     
@@ -712,20 +719,21 @@ int hb_open(const char *path, struct fuse_file_info *fi)
         int mode_value = fi->flags & 0xFFFF;
         //// Initiate files' mutex
         if (!hb_findMutex(path)) {
-            printf("[hb_open] creation path : %s tid : %lu, mode_value : %d\n", path, pthread_self(), mode_value);
+            //printf("[hb_open] creation path : %s tid : %lu, mode_value : %d\n", path, pthread_self(), mode_value);
             hb_createMutex(path, st.st_ino);    //// Case of first open
 
         }
         if (mode_value == 32768) {
             hb_retMutex(path)->read_count++;
-            printf("[hb_open] path : %s, tid : %lu, read_count : %d\n", path, pthread_self(), hb_retMutex(path)->read_count);
+            //printf("[hb_open] path : %s, tid : %lu, read_count : %d\n", path, pthread_self(), hb_retMutex(path)->read_count);
         }
 
         //// 33793 for append mode
         //// 32800 for client.c using mode
         else if (mode_value == 32769 || mode_value == 32770 || mode_value == 33793 || mode_value == 32800) {
             hb_retMutex(path)->write_count++;
-            printf("[hb_open] path : %s, tid : %lu, write_count : %d\n", path, pthread_self(), hb_retMutex(path)->write_count);
+            //printf("[hb_open] path : %s, tid : %lu, write_count : %d\n", path, pthread_self(), hb_retMutex(path)->write_count);
+            //mig_end_flag = 0;
         }
         /*
         else {
@@ -912,7 +920,8 @@ int hb_write(const char *path, const char *buf, size_t size, off_t offset,
 
     if ( (log_head = hb_findUfile(path)) != NULL ) {
         hb_insertUlog(log_head, size, offset);
-        printf("[hb_write] tid : %lu, size : %lu, offset : %li\n",pthread_self(), size, offset);
+        (log_head->size)++;
+        //printf("[hb_write] tid : %lu, size : %lu, offset : %li\n",pthread_self(), size, offset);
         //hb_printUlog(log_head);        
     }
 
@@ -1032,11 +1041,13 @@ int hb_release(const char *path, struct fuse_file_info *fi)
             int cp_blocksize = 4096; //// Basic block size
             int cp_offset = 0;
             int fd_read, fd_write;
+            int ret_read, ret_write;
             lstat(fpath_ssd, &st);
 
+            /////// Just case of first write 
             if (st.st_size >= HB_DATA->mig_threshold && hb_retMutex(path)->write_count == 1) {
 
-                printf("[hb_release] big migration, tid : %lu\n",pthread_self());
+                //printf("[hb_release] big migration, path : %s, tid : %lu\n",path,pthread_self());
 
                 hb_createUfile(path);
 
@@ -1045,7 +1056,7 @@ int hb_release(const char *path, struct fuse_file_info *fi)
                 fd_write = open(fpath_hdd, O_WRONLY);
                 
                 while (1) {
-                    pthread_mutex_lock(&(hb_retMutex(path)->wrt));
+                    //pthread_mutex_lock(&(hb_retMutex(path)->wrt));
 
                     ret = pread(fd_read, cp_buffer, cp_blocksize, cp_offset);
                     if (ret == 0) {
@@ -1053,55 +1064,105 @@ int hb_release(const char *path, struct fuse_file_info *fi)
                         break;
                     }
                     pwrite(fd_write, cp_buffer, cp_blocksize, cp_offset);
-                    printf("...(migration, path : %s, tid : %lu)...\n", path, pthread_self());
+                    //printf("...(migration, path : %s, tid : %lu)...\n", path, pthread_self());
 
                     cp_offset += cp_blocksize;
-                    pthread_mutex_unlock(&(hb_retMutex(path)->wrt));
+                    //pthread_mutex_unlock(&(hb_retMutex(path)->wrt));
                 }
 
                 close(fd_read);
                 close(fd_write);
+                //printf("[hb_release] migration is done, tid : %lu\n",pthread_self());
 
                 log_head = hb_findUfile(path);
-                if (log_head != NULL && log_head->size > 0) {
+
+                ////// If update didn't occur during migration, log_head's size is 0.
+                if (log_head != NULL && log_head->size != 0) {
+                    struct ulog_node *cur_node;
+                    /*printf("  [Inside of update logs]\n");
+                    printf("  linked list's size1 : %d\n",log_head->size);*/
+                    //hb_printUlog(log_head);
+
                     fd_read = open(fpath_ssd, O_RDONLY);
+                    /*if (mode_value == 32770)
+                        fd_write = open(fpath_hdd, O_RDWR);
+                    else if (mode_value == 33793)*/
                     fd_write = open(fpath_hdd, O_RDWR);
+                    //printf("   fd_read : %d, fd_write : %d\n",fd_read, fd_write);
 
-                    //printf("[log_head] size : %d, offset : %d\n",log_head->size, log_head->offset);
-                    while (!hb_finishedUlog(log_head)) {
-                        ptr = log_head;
-                        while (ptr != NULL) {
+                    //////// In here, code should be edited in the write_count-counting way
+                    //while (!hb_finishedUlog(log_head)) {
+                    do {
+                        /*if (log_head->size > 0)
+                            printf("log_head size is larger than 0, %d\n",log_head->size);
+                        if(log_head->size == 1)
+                            printf("count is %d\n",count2);*/
+                        /*if (hb_retMutex(path)->write_count == 1)
+                            printf("log_head's size in internal is %d\n",log_head->size);*/
+
+                        while (log_head->link != NULL) {
+                            /*if (ptr->link == NULL) {
+                                last_node = ptr;    //// last_node point the last node of current linked list
+                            }*/
+                            //count1 ++;
+
+                            pthread_mutex_lock(&(hb_retMutex(path)->wrt));
+
+                            cur_node = log_head->link;
+
+                            ret_read = pread(fd_read, cp_buffer, cur_node->size, cur_node->offset);
+                            ret_write = pwrite(fd_write, cp_buffer, cur_node->size, cur_node->offset);
+
+                            /*if (ret_read != cur_node->size)
+                                count2 ++;
+                            if (ret_write != cur_node->size)
+                                count3 ++;*/
+
+                            log_head->link = cur_node->link;
+                            free(cur_node);
+                            (log_head->size) --;  //// size decrement
+
+                            //ptr = ptr->link;
+
+                            pthread_mutex_unlock(&(hb_retMutex(path)->wrt));
+                            /*
                             cp_offset = ptr->offset;
-
                             while (ptr->size > 0) {
                                 pthread_mutex_lock(&(hb_retMutex(path)->wrt));
                                 pread(fd_read, cp_buffer, cp_blocksize, cp_offset);
                                 pwrite(fd_write, cp_buffer, cp_blocksize, cp_offset);
-                                printf("...(update log, path : %s, tid : %lu)...\n", path, pthread_self());
+                                //printf("...(update log, path : %s, tid : %lu)...\n", path, pthread_self());
 
                                 cp_offset += cp_blocksize;
                                 ptr->size -= cp_blocksize;
                                 pthread_mutex_unlock(&(hb_retMutex(path)->wrt));
                             }
                             ptr->size = 0;
-                            ptr = ptr->link;
+                            ptr = ptr->link;*/
                         }
-                    }
+                    } while (hb_retMutex(path)->write_count != 1 || log_head->size != 0);
+
+                    /*printf("Is it came here?\n");
+                    printf("count2 : %d\n", count2);
+                    printf("count3 : %d\n", count3);*/
                     close(fd_read);
                     close(fd_write);
-
                 }
-
-                printf("[hb_release] before free, path : %s, tid : %lu\n",path, pthread_self());
+                //printf("[hb_release] before free, path : %s, tid : %lu\n",path, pthread_self());
                 hb_freeUlog(log_head);
-                hb_printUlog(log_head);
                 hb_deleteUfile(path);
                 remove(fpath_ssd);
-                printf("[hb_release] finally passed free and remove\n");
+                //printf("[hb_release] finally passed free and remove\n");
                 //rename(fpath_ssd, fpath_hdd);
 
             }
-            printf("[hb_release] end here, path : %s, tid : %lu\n",path, pthread_self());
+            /*else {
+                mig_end_flag = 1;
+            }*/
+
+            /*printf("  linked list's size2 : %d\n",log_head->size);
+            printf("  count1 is %d\n", count1);
+            printf("[hb_release] end here, path : %s, tid : %lu, write_count : %d\n",path, pthread_self(), hb_retMutex(path)->write_count);*/
             hb_retMutex(path)->write_count--;
             
         }
@@ -1689,7 +1750,7 @@ int main(int argc, char *argv[])
     fuse_stat = fuse_main(argc, argv, &hb_oper, hb_data);
     fprintf(stderr, "fuse_main returned %d\n", fuse_stat);
 
-    hb_freeMutex();    
+    hb_freeMutex();
     
     return fuse_stat;
 }

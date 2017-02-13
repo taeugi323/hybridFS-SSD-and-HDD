@@ -14,11 +14,16 @@ if want_to_make[-1].upper() == 'M':
     unit = 2**10
 
 unit = unit * int(want_to_make[0:-1])
-
+"""
 # input_str is 1KB string
 for j in range(64):
     for i in range(15):
         input_str += str(unichr(random.randrange(26)+97))
+    input_str += '\n'
+"""
+for j in range(64):
+    for i in range(15):
+        input_str += 'a'
     input_str += "\n"
 
 for i in range(unit):
